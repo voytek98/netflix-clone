@@ -1,6 +1,8 @@
 import React from "react";
 import moviesdb from "../api/moviedb";
 
+import Trending from './Trending';
+
 class App extends React.Component {
   state = {
     trendingList: []
@@ -13,12 +15,14 @@ class App extends React.Component {
         params: { api_key: process.env.REACT_APP_API }
       });
 
-      this.setState({ trendingList: response.data });
+      this.setState({ trendingList: response.data.results });
     })();
   }
-
+  
   render() {
-    return <h1>Hello world!</h1>;
+    return (
+      <Trending trending={this.state.trendingList} />
+    )
   }
 }
 
