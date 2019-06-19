@@ -19,7 +19,7 @@ const Trending = ({ trending }) => {
     );
   });
 
-  return <div>{trendingList}</div>;
+  return <div className="ui link cards">{trendingList}</div>;
 };
 
 export default Trending;
