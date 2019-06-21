@@ -4,11 +4,12 @@ import "./Lead.css";
 class Lead extends React.Component {
   
   render() {
-
+    let bgImage = "https://image.tmdb.org/t/p/w1280/w2PMyoyLU22YvrGK3smVM9fW1jj.jpg";
+    
     return (
       <div 
         className="lead"
-        style={{ backgroundImage: "url(" + "https://image.tmdb.org/t/p/w1280/w2PMyoyLU22YvrGK3smVM9fW1jj.jpg" + ")" }}
+        style={{ backgroundImage: `url(${bgImage}` }}
       >
         <div className="lead__content">
           <h2 className="lead__content__title">Capitan Marvel</h2>
