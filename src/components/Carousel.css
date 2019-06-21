@@ -1,3 +1,9 @@
+.carousel {
+    padding-left: 5em;
+    padding-right: 5em;
+    margin-bottom: 3em;
+}
+
 .carousel__list {
     display: flex;
     flex-wrap: nowrap;
@@ -10,6 +16,10 @@
 
 .carousel__list::-webkit-scrollbar { /* Hide scroll on webkit */
     display: none;
+}
+
+.carousel__title {
+    color: white;
 }
 
 .card {

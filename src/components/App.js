@@ -1,8 +1,11 @@
 import React from "react";
 import moviesdb from "../api/moviedb";
 
-import Navigation from "./Navigation";
+import '../assets/styles/styles.css';
+
 import Carousel from "./Carousel";
+import Lead from './Lead';
+import Navigation from "./Navigation";
 
 class App extends React.Component {
   constructor(props) {
@@ -26,8 +29,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <Navigation />
+        <Lead />
         <Carousel 
           title="Trending Now"
           moviesList={this.state.trendingList}

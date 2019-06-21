@@ -1,6 +1,5 @@
-.navigation {
-    margin-bottom: 40px;
-}
 .ui.secondary.inverted.menu {
     background-color: #1b1c1d;
+    padding-left: 3em;
+    padding-right: 3em;
 }

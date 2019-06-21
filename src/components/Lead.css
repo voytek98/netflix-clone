@@ -1,0 +1,42 @@
+.lead {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 85vh;
+}
+
+.lead__content {
+    color: white;
+    position: absolute;
+    padding-left: 6em;
+    top: 20%;
+    width: 500px;
+    height: 400px;
+}
+
+.lead__content__title {
+    font-size: 4rem;
+}
+
+.lead__content__icons {
+    margin-bottom: 2em;
+}
+
+.lead__content__icons__icon {
+    padding-right: 1.25em;
+}
+
+.lead__content__icons__button {
+    box-sizing: border-box;
+    font-size: 1.25rem;
+    padding: .75em 2.3em;
+    margin-right: 1em;
+    border: none;
+    background-color: rgba(51, 51, 51, 0.3);
+    color: white;
+}
+
+.lead__content__description {
+    font-size: 1.25rem;
+}
