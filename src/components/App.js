@@ -19,7 +19,8 @@ class App extends React.Component {
         params: { api_key: process.env.REACT_APP_API }
       });
 
-      this.setState({ trendingList: response.data.results });
+      this.setState({ trendingList: response.data.results.slice(0, 10) });
+      console.log(this.state.trendingList)
     })();
   }
 
@@ -27,6 +28,18 @@ class App extends React.Component {
     return (
       <div>
         <Navigation />
+        <Carousel 
+          title="Trending Now"
+          moviesList={this.state.trendingList}
+        />
+        <Carousel 
+          title="Trending Now"
+          moviesList={this.state.trendingList}
+        />
+        <Carousel 
+          title="Trending Now"
+          moviesList={this.state.trendingList}
+        />
         <Carousel 
           title="Trending Now"
           moviesList={this.state.trendingList}

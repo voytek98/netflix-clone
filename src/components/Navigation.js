@@ -1,13 +1,14 @@
 import React from "react";
 
+import './Navigation.css'
 import logo from '../assets/images/logo.svg';
 import profile from '../assets/images/profile.png';
 
 const Navigation = () => {
   return (
-    <nav>
+    <nav className="navigation">
       <div className="ui inverted segment">
-        <div className="ui inverted secondary menu">
+        <div className="ui inverted secondary menu fixed">
           <div className="item">
             <img src={logo} alt="logo"/>
           </div>
@@ -16,7 +17,7 @@ const Navigation = () => {
           <button className="item">Movies</button>
           <button className="item">Recently Added</button>
           <button className="item">My List</button>
-          <div className="right menu">
+          <div className="right menu fixed">
             <button className="item"><i className="search icon"></i></button>
             <button className="item"><i className="bell outline icon"></i></button>
             <button className="item">KIDS</button>
