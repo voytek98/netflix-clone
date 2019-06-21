@@ -1,0 +1,12 @@
+.carousel__list {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    margin: 20px 30px;
+}
+
+.carousel__card {
+    background: red;
+    height: 200px;
+    width: 20%;
+}

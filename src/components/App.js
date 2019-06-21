@@ -1,7 +1,9 @@
 import React from "react";
 import moviesdb from "../api/moviedb";
 
+import Navigation from './Navigation';
 import Trending from './Trending';
+import Carousel from './Carousel';
 
 class App extends React.Component {
   state = {
@@ -21,7 +23,12 @@ class App extends React.Component {
   
   render() {
     return (
-      <Trending trending={this.state.trendingList} />
+      <div>
+
+        <Navigation />
+        {/* <Trending trending={this.state.trendingList} /> */}
+        <Carousel />
+      </div>
     )
   }
 }
