@@ -1,12 +1,19 @@
 .carousel__list {
     display: flex;
-    flex-flow: wrap row;
-    justify-content: center;
-    margin: 20px 30px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    width: 100%;
+    -webkit-overflow-scrolling: touch; /* Nice scrolling effect on webkit browsers */
+    -ms-overflow-style: none; /* Hide scroll on IE 10+ */
+    scrollbar-width: none; /* Hide scroll on Firefox */
 }
 
-.carousel__card {
+.carousel__list::-webkit-scrollbar { /* Hide scroll on webkit */
+    display: none;
+}
+
+.card {
+    flex: 0 0 auto;
     background: red;
-    height: 200px;
-    width: 20%;
+    /* height: 200px; */
 }

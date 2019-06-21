@@ -1,16 +1,15 @@
 import React from "react";
 import moviesdb from "../api/moviedb";
 
-import Navigation from './Navigation';
-import Trending from './Trending';
-import Carousel from './Carousel';
+import Navigation from "./Navigation";
+import Carousel from "./Carousel";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       trendingList: []
-    }
+    };
   }
 
   componentDidMount() {
@@ -23,16 +22,17 @@ class App extends React.Component {
       this.setState({ trendingList: response.data.results });
     })();
   }
-  
+
   render() {
     return (
       <div>
-
         <Navigation />
-        {/* <Trending trending={this.state.trendingList} /> */}
-        <Carousel />
+        <Carousel 
+          title="Trending Now"
+          moviesList={this.state.trendingList}
+        />
       </div>
-    )
+    );
   }
 }
 
