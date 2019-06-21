@@ -6,9 +6,12 @@ import Trending from './Trending';
 import Carousel from './Carousel';
 
 class App extends React.Component {
-  state = {
-    trendingList: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      trendingList: []
+    }
+  }
 
   componentDidMount() {
     // Get list of trending movies / tv shows
