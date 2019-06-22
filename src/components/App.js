@@ -13,8 +13,18 @@ class App extends React.Component {
     this.state = {
       trendingList: [],
       topRatedMovies: [],
+      newComedyMovies: [],
+      netflixOriginalsMovies: [],
       randomTitle: {}
     };
+  }
+
+  getMoviesGenres = async () => {
+    let res = await moviesdb.get("/genre/movie/list", {
+      params: { api_key: process.env.REACT_APP_API }
+    });
+
+    console.log(res.data.genres)
   }
 
   getTrending = async () => {
@@ -23,26 +33,66 @@ class App extends React.Component {
       params: { api_key: process.env.REACT_APP_API }
     });
     
-    let maxNum = res.data.results.length;
-    let randomNum = Math.floor(Math.random() * maxNum);
-
     this.setState({ trendingList: res.data.results.slice(0, 10) });
-    this.setState({ randomTitle: res.data.results[randomNum] });
   }
 
   getTopRatedMovies = async () => {
     let res = await moviesdb.get("/movie/top_rated", {
       params: { api_key: process.env.REACT_APP_API },
-      with_genres: 18
     });
     
-    console.log(res.data.results)
     this.setState({ topRatedMovies: res.data.results.slice(0, 10) })
   }
 
+  getNewComedyMovies = async () => {
+    let res = await moviesdb.get("/discover/movie", {
+      params: { 
+        api_key: process.env.REACT_APP_API,
+        with_genres: 35,
+        sort_by: 'release_date.desc',
+        'primary_release_date.lte': Date.now(),
+        'vote_count.gte': 30
+      }
+    })
+
+    this.setState({ newComedyMovies: res.data.results.slice(0, 10) })
+  }
+
+  getNetflixOriginals = async () => {
+    let res = await moviesdb.get("/discover/tv", {
+      params: { 
+        api_key: process.env.REACT_APP_API,
+        with_networks: 213,
+        // sort_by: 'release_date.desc',
+        'primary_release_date.lte': Date.now(),
+        'vote_count.gte': 30
+      }
+    })
+
+    let maxNum = res.data.results.length;
+    let randomNum = Math.floor(Math.random() * maxNum);
+
+    this.setState({ randomTitle: res.data.results[randomNum] });
+    this.setState({ netflixOriginalsMovies: res.data.results.slice(0, 10) })
+  }
+
+  getNetflix = async () => {
+    let res = await moviesdb.get("/search/company", {
+      params: {
+        api_key: process.env.REACT_APP_API,
+        query: 'netflix'
+      }
+    })
+
+    console.log(res)
+  }
+
   componentDidMount() {
+    this.getMoviesGenres();
     this.getTrending();
     this.getTopRatedMovies();
+    this.getNewComedyMovies();
+    this.getNetflixOriginals();
   }
 
   render() {
@@ -55,12 +105,18 @@ class App extends React.Component {
           moviesList={this.state.trendingList}
           first={true}
         />
+        <Carousel 
+          title="Netflix Originals"
+          moviesList={this.state.netflixOriginalsMovies}
+        />
         <Carousel
           title="Top Rated"
           moviesList={this.state.topRatedMovies} 
         />
-        <Carousel title="Trending Now" moviesList={this.state.trendingList} />
-        <Carousel title="Trending Now" moviesList={this.state.trendingList} />
+        <Carousel 
+          title="Latest Comedy Movies"
+          moviesList={this.state.newComedyMovies}
+        />
       </div>
     );
   }
