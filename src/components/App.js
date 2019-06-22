@@ -1,10 +1,10 @@
 import React from "react";
 import moviesdb from "../api/moviedb";
 
-import '../assets/styles/styles.css';
+import "../assets/styles/styles.css";
 
 import Carousel from "./Carousel";
-import Lead from './Lead';
+import Lead from "./Lead";
 import Navigation from "./Navigation";
 
 class App extends React.Component {
@@ -23,7 +23,7 @@ class App extends React.Component {
       });
 
       this.setState({ trendingList: response.data.results.slice(0, 10) });
-      console.log(this.state.trendingList)
+      console.log(this.state.trendingList);
     })();
   }
 
@@ -32,22 +32,14 @@ class App extends React.Component {
       <div className="wrapper">
         <Navigation />
         <Lead />
-        <Carousel 
+        <Carousel
           title="Trending Now"
           moviesList={this.state.trendingList}
+          first={true}
         />
-        <Carousel 
-          title="Trending Now"
-          moviesList={this.state.trendingList}
-        />
-        <Carousel 
-          title="Trending Now"
-          moviesList={this.state.trendingList}
-        />
-        <Carousel 
-          title="Trending Now"
-          moviesList={this.state.trendingList}
-        />
+        <Carousel title="Trending Now" moviesList={this.state.trendingList} />
+        <Carousel title="Trending Now" moviesList={this.state.trendingList} />
+        <Carousel title="Trending Now" moviesList={this.state.trendingList} />
       </div>
     );
   }

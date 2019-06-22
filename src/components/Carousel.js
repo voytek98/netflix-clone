@@ -1,7 +1,7 @@
 import React from "react";
 import "./Carousel.css";
 
-const Carousel = ({moviesList, title}) => {
+const Carousel = ({moviesList, title, first}) => {
   // Base url for thumbnails
   let thumbnail = "https://image.tmdb.org/t/p/w300";
 
@@ -21,7 +21,8 @@ const Carousel = ({moviesList, title}) => {
   });
   
   return (
-    <div className="carousel">
+    // Check if carousel is first, and add class to it using inline if statement
+    <div className={`carousel${first ? ' carousel--first' : ''}`}>
       <h2 className="carousel__title">{title}</h2>
       <div className="carousel__list">
         {renderedList}

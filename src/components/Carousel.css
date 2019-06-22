@@ -22,6 +22,11 @@
     color: white;
 }
 
+.carousel--first {
+    margin-top: -14em;
+    position: relative;
+}
+
 .card {
     flex: 0 0 auto;
     background: red;
