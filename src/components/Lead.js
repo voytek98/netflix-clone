@@ -4,10 +4,10 @@ import "./Lead.css";
 const Lead = ({movie}) => {
   // Set base url for image
   let baseImage = "https://image.tmdb.org/t/p/w1280";
-  
-  if (typeof movie.title !== "undefined" ) {
+  if(typeof movie.name !== "undefined") {
+    console.log(movie.name)
     // Change font size of title to smaller if title is too long
-    if(movie.title.length > 25 ) { document.querySelector('.lead__content__title').style.fontSize = "4em" }
+    if(movie.name.length >= 20 ) { document.querySelector('.lead__content__title').style.fontSize = "5em" }
   }
 
   return (
@@ -32,8 +32,8 @@ const Lead = ({movie}) => {
   );
 }
 
-Lead.defaultProps = {
-  movie: []
-}
+// Lead.defaultProps = {
+//   movie: []
+// }
 
 export default Lead;
