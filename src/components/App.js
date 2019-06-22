@@ -14,7 +14,7 @@ class App extends React.Component {
       trendingList: [],
       topRatedMovies: [],
       newComedyMovies: [],
-      netflixOriginalsMovies: [],
+      popularOnNetflix: [],
       randomTitle: {}
     };
   }
@@ -58,12 +58,11 @@ class App extends React.Component {
     this.setState({ newComedyMovies: res.data.results.slice(0, 10) })
   }
 
-  getNetflixOriginals = async () => {
+  getPopularOnNetflix = async () => {
     let res = await moviesdb.get("/discover/tv", {
       params: { 
         api_key: process.env.REACT_APP_API,
         with_networks: 213,
-        // sort_by: 'release_date.desc',
         'primary_release_date.lte': Date.now(),
         'vote_count.gte': 30
       }
@@ -73,18 +72,7 @@ class App extends React.Component {
     let randomNum = Math.floor(Math.random() * maxNum);
 
     this.setState({ randomTitle: res.data.results[randomNum] });
-    this.setState({ netflixOriginalsMovies: res.data.results.slice(0, 10) })
-  }
-
-  getNetflix = async () => {
-    let res = await moviesdb.get("/search/company", {
-      params: {
-        api_key: process.env.REACT_APP_API,
-        query: 'netflix'
-      }
-    })
-
-    console.log(res)
+    this.setState({ popularOnNetflix: res.data.results.slice(0, 10) })
   }
 
   componentDidMount() {
@@ -92,7 +80,7 @@ class App extends React.Component {
     this.getTrending();
     this.getTopRatedMovies();
     this.getNewComedyMovies();
-    this.getNetflixOriginals();
+    this.getPopularOnNetflix();
   }
 
   render() {
@@ -106,8 +94,8 @@ class App extends React.Component {
           first={true}
         />
         <Carousel 
-          title="Netflix Originals"
-          moviesList={this.state.netflixOriginalsMovies}
+          title="Popular on Netflix"
+          moviesList={this.state.popularOnNetflix}
         />
         <Carousel
           title="Top Rated"
