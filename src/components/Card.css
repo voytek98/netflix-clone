@@ -26,6 +26,7 @@
 
 .card__content {
     display: flex;
+    flex-direction: row;
     height: 100%;
     width: 100%;
     padding: 1.75rem;
@@ -61,6 +62,34 @@
     color: #46CD66;
     padding: 0;
     margin-bottom: .5rem;
+}
+
+.card__content__icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: .75rem;
+}
+
+.card__icon {
+    font-size: 1.5rem;
+    color: white;
+    background-color: transparent;
+    padding: .6rem;
+    margin-bottom: .75rem;
+    border-radius: 50%;
+    border: 1px solid gray;
+    transition: transform 300ms ease-in-out 100ms;
+}
+
+.card__icon:hover {
+    transform: scale(1.15);
+    border-color: white;
+}
+
+.card__icon i {
+    font-size: inherit;
+    border: none;
 }
 
 .card__image img{
