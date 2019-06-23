@@ -19,9 +19,9 @@ const Card = ({ video }) => {
           <p className="card__content__description__overview">{video.overview}</p>
         </div>
         <div className="card__content__icons">
-          <button className="card__icon"><i class="far fa-thumbs-up"></i></button>
-          <button className="card__icon"><i class="far fa-thumbs-down"></i></button>
-          <button className="card__icon"><i class="fas fa-plus"></i></button>
+          <button className="card__icon"><i className="far fa-thumbs-up"></i></button>
+          <button className="card__icon"><i className="far fa-thumbs-down"></i></button>
+          <button className="card__icon"><i className="fas fa-plus"></i></button>
         </div>
       </div>
     </div>

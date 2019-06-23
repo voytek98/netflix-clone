@@ -6,10 +6,14 @@
     font-size: 1.5em;
     position: fixed;
     z-index: 1;
-    background-color: rgb(20, 20, 20);
-    /* background-color: transparent; */
+    background-color: transparent;
     padding-left: 6rem;
     padding-right: 6rem;
+    transition: background-color 400ms ease-in-out 200ms;
+}
+
+.navigation--scrolled {
+    background-color: rgb(20, 20, 20);
 }
 
 .navigation__item {

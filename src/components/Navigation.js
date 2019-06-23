@@ -4,9 +4,9 @@ import './Navigation.css'
 import logo from '../assets/images/logo.svg';
 import profile from '../assets/images/profile.png';
 
-const Navigation = () => {
+const Navigation = ({nav}) => {
   return (
-    <nav className="navigation">
+    <nav className={`navigation${nav ? ' navigation--scrolled' : ''}`}>
       <div className="navigation__menu">
         <div className="navigation__menu__left">
           <div className="navigation__logo">

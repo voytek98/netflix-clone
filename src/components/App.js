@@ -11,6 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      scrolled: false,
       trendingList: [],
       topRatedMovies: [],
       newComedyMovies: [],
@@ -81,12 +82,25 @@ class App extends React.Component {
     this.getTopRatedMovies();
     this.getNewComedyMovies();
     this.getPopularOnNetflix();
+    window.addEventListener("scroll", () => {
+      const top = window.scrollY < 20;
+      if (top) {
+        this.setState({ scrolled: false });
+      } else {
+        this.setState({ scrolled: true });
+      }
+    })
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll');
+  }
+  
 
   render() {
     return (
       <div className="wrapper">
-        <Navigation />
+        <Navigation nav={this.state.scrolled} />
         <Lead movie={ this.state.randomTitle } />
         <Carousel
           title="Trending Now"
