@@ -33,7 +33,7 @@ class App extends React.Component {
       params: { api_key: process.env.REACT_APP_API }
     });
     
-    this.setState({ trendingList: res.data.results.slice(0, 10) });
+    this.setState({ trendingList: res.data.results.slice(0, 5) });
   }
 
   getTopRatedMovies = async () => {
@@ -41,7 +41,7 @@ class App extends React.Component {
       params: { api_key: process.env.REACT_APP_API },
     });
     
-    this.setState({ topRatedMovies: res.data.results.slice(0, 10) })
+    this.setState({ topRatedMovies: res.data.results.slice(0, 5) })
   }
 
   getNewComedyMovies = async () => {
@@ -55,7 +55,7 @@ class App extends React.Component {
       }
     })
 
-    this.setState({ newComedyMovies: res.data.results.slice(0, 10) })
+    this.setState({ newComedyMovies: res.data.results.slice(0, 5) })
   }
 
   getPopularOnNetflix = async () => {
@@ -72,7 +72,7 @@ class App extends React.Component {
     let randomNum = Math.floor(Math.random() * maxNum);
 
     this.setState({ randomTitle: res.data.results[randomNum] });
-    this.setState({ popularOnNetflix: res.data.results.slice(0, 10) })
+    this.setState({ popularOnNetflix: res.data.results.slice(0, 5) })
   }
 
   componentDidMount() {

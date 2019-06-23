@@ -2,20 +2,25 @@
     padding-left: 5em;
     padding-right: 5em;
     margin-bottom: 3em;
+    width: 100%;
 }
 
 .carousel:nth-last-child(1) {
     margin-bottom: 0;
+    padding-bottom: 6em;
 }
 
 .carousel__list {
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
     width: 100%;
+    height: auto;
     -webkit-overflow-scrolling: touch; /* Nice scrolling effect on webkit browsers */
     -ms-overflow-style: none; /* Hide scroll on IE 10+ */
     scrollbar-width: none; /* Hide scroll on Firefox */
+}
+
+.carousel__list:hover .card {
+    transform: translateX(-25%);
 }
 
 .carousel__list::-webkit-scrollbar { /* Hide scroll on webkit */
@@ -23,16 +28,11 @@
 }
 
 .carousel__title {
+    font-size: 2.3em;
     color: white;
 }
 
 .carousel--first {
     margin-top: -14em;
     position: relative;
-}
-
-.card {
-    flex: 0 0 auto;
-    background: red;
-    /* height: 200px; */
 }

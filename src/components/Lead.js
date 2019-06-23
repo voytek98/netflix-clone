@@ -5,7 +5,6 @@ const Lead = ({movie}) => {
   // Set base url for image
   let baseImage = "https://image.tmdb.org/t/p/w1280";
   if(typeof movie.name !== "undefined") {
-    console.log(movie.name)
     // Change font size of title to smaller if title is too long
     if(movie.name.length >= 20 ) { document.querySelector('.lead__content__title').style.fontSize = "5em" }
   }
@@ -15,15 +14,15 @@ const Lead = ({movie}) => {
       className="lead"
       style={{ backgroundImage: `url(${baseImage}${movie.backdrop_path}` }}
     >
-      <div className="lead__overlay"></div>
+      <div className="overlay--black"></div>
       <div className="lead__content">
         <h2 className="lead__content__title">{movie.title || movie.name}</h2>
         <div className="lead__content__icons">
           <button className="lead__content__icons__button">
-            <i className="lead__content__icons__icon play icon" />Play
+            <i className="lead__content__icons__icon fas fa-play" />Play
           </button>
           <button className="lead__content__icons__button">
-            <i className="lead__content__icons__icon plus icon" />My list
+            <i className="lead__content__icons__icon fas fa-plus" />My list
           </button>
         </div>
         <p className="lead__content__description">{movie.overview}</p>

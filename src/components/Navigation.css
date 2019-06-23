@@ -1,5 +1,42 @@
-.ui.secondary.inverted.menu {
-    background-color: #1b1c1d;
-    padding-left: 3em;
-    padding-right: 3em;
+.navigation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 7rem;
+    font-size: 1.5em;
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(20, 20, 20);
+    /* background-color: transparent; */
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.navigation__item {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.navigation__menu {
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.navigation__menu__left {
+    display: flex;
+}
+
+.navigation__menu__right {
+    display: flex;
+}
+
+.navigation__logo {
+    display: flex;
+    margin-right: 2rem; 
+}
+.navigation__logo img {
+    width: 10rem;
 }
