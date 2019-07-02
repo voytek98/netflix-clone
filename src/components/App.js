@@ -65,7 +65,7 @@ class App extends React.Component {
         api_key: process.env.REACT_APP_API,
         with_networks: 213,
         'primary_release_date.lte': Date.now(),
-        'vote_count.gte': 30
+        'vote_count.gte': 60
       }
     })
 

@@ -1,0 +1,31 @@
+.navigation__profile {
+    display: flex;
+    align-items: center;
+}
+
+.navigation__profile:hover .navigation__profile__dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navigation__profile__avatar {
+    margin-right: 1rem;
+    width: 2.5em;
+}
+
+.navigation__profile__icon {
+    color: white;
+}
+
+.navigation__profile__dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 6rem;
+    top: 6rem;
+    background-color: rgba(0,0,0,.9);
+    color: white;
+    width: 200px;
+    height: 200px;
+    transition: opacity 300ms;
+}

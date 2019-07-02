@@ -3,13 +3,13 @@
     align-items: center;
     width: 100%;
     height: 7rem;
-    font-size: 1.5em;
+    font-size: 1.35rem;
     position: fixed;
     z-index: 1;
     background-color: transparent;
     padding-left: 6rem;
     padding-right: 6rem;
-    transition: background-color 400ms ease-in-out 200ms;
+    transition: background-color 300ms ease-in-out 100ms;
 }
 
 .navigation--scrolled {
@@ -17,9 +17,14 @@
 }
 
 .navigation__item {
+    margin-right: 1.5rem;
     background-color: transparent;
     border: none;
     color: white;
+}
+
+.navigation__item--active {
+    font-weight: 600;
 }
 
 .navigation__menu {
@@ -37,10 +42,14 @@
     display: flex;
 }
 
+.navigation__icon {
+    font-size: 2rem;
+}
+
 .navigation__logo {
     display: flex;
-    margin-right: 2rem; 
+    margin-right: 2.5rem; 
 }
 .navigation__logo img {
-    width: 10rem;
+    width: 9.5rem;
 }
