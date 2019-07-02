@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import moviesdb from "../api/moviedb";
 
 import "../assets/styles/styles.css";
@@ -8,17 +9,14 @@ import Lead from "./Lead";
 import Navigation from "./Navigation";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      scrolled: false,
-      trendingList: [],
-      topRatedMovies: [],
-      newComedyMovies: [],
-      popularOnNetflix: [],
-      randomTitle: {}
-    };
-  }
+  state = {
+    scrolled: false,
+    trendingList: [],
+    topRatedMovies: [],
+    newComedyMovies: [],
+    popularOnNetflix: [],
+    randomTitle: {}
+  };
 
   getMoviesGenres = async () => {
     let res = await moviesdb.get("/genre/movie/list", {
