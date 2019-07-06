@@ -5,6 +5,10 @@ import "../assets/styles/styles.css";
 
 import Navigation from "./Navigation";
 import HomePage from "../pages/HomePage";
+import TVShows from "../pages/TVShows";
+import Movies from "../pages/Movies";
+import RecentlyAdded from "../pages/RecentlyAdded";
+import MyList from "../pages/MyList";
 
 class App extends React.Component {
   state = {
@@ -33,7 +37,10 @@ class App extends React.Component {
         <Router>
           <div className="wrapper">
             <Route exact path='/' component={HomePage} />
-            {/* <Route path='/tv-shows' component={TVShows} /> */}
+            <Route path='/tv-shows' component={TVShows} />
+            <Route path='/movies' component={Movies} />
+            <Route path='/recently-added' component={RecentlyAdded} />
+            <Route path='/my-list' component={MyList} />
           </div>
         </Router>
       </div>

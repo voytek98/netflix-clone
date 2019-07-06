@@ -25,15 +25,15 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <Lead movie={ this.state.randomNetflixTitle } />
-        <Carousel
-          title="Trending Now"
-          moviesList={this.state.trending}
-          first={true}
-          />
+        <Lead movie={this.state.randomNetflixTitle} />
         <Carousel 
           title="Popular on Netflix"
           moviesList={this.state.popularNetflix}
+          first={true}
+          />
+        <Carousel
+          title="Trending Now"
+          moviesList={this.state.trending}
           />
         <Carousel
           title="Top Rated"

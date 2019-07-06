@@ -21,10 +21,19 @@
     background-color: transparent;
     border: none;
     color: white;
+    outline: none;
 }
 
-.navigation__item--active {
+
+.navigation__link {
+    color: inherit;
+    text-decoration: none;
+    outline: inherit;
+}
+
+.navigation__link--active {
     font-weight: 600;
+    font-size: 1.1em;
 }
 
 .navigation__menu {
