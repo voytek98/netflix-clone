@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 
 import "../assets/styles/styles.css";
 
@@ -33,7 +33,7 @@ class App extends React.Component {
         <Router>
           <div className="wrapper">
             <Route exact path='/' component={HomePage} />
-            <HomePage />
+            {/* <Route path='/tv-shows' component={TVShows} /> */}
           </div>
         </Router>
       </div>
