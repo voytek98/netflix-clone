@@ -5,7 +5,7 @@ import Lead from '../components/Lead';
 
 import {trending, popularNetflix, topRatedMovies, newComedyMovies, randomNetflixTitle} from '../api/requests';
 
-class HomePage extends React.Component {
+class TVShows extends React.Component {
   state = {
     trending: [],
     popularNetflix: [],
@@ -48,4 +48,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default TVShows;

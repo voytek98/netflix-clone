@@ -11,10 +11,11 @@ const Navigation = ({nav}) => {
     <nav className={`navigation${nav ? ' navigation--scrolled' : ''}`}>
       <div className="navigation__menu">
         <div className="navigation__menu__left">
-          <div className="navigation__logo">
-            <img src={logo} alt="logo"/>
-          </div>
           <Router>
+          <div className="navigation__logo">
+          <NavLink exact to="/" className="navigation__link" activeClassName="navigation__link--active"><img src={logo} alt="logo"/></NavLink>
+            
+          </div>
             <button className="navigation__item">
               <NavLink exact to="/" className="navigation__link" activeClassName="navigation__link--active">Home</NavLink>
             </button>

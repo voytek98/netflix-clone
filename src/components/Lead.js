@@ -14,6 +14,9 @@ const Lead = ({movie}) => {
       className="lead"
       style={{ backgroundImage: `url(${baseImage}${movie.backdrop_path}` }}
     >
+      {/* <div className="lead__background">
+        <img onError={e => e.target.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/A_blank_black_picture.jpg/1536px-A_blank_black_picture.jpg")} src={`${baseImage}${movie.backdrop_path}`} alt="background" className="lead__background__image"/>
+      </div> */}
       <div className="overlay--black"></div>
       <div className="lead__content">
         <h2 className="lead__content__title">{movie.title || movie.name}</h2>
@@ -30,9 +33,5 @@ const Lead = ({movie}) => {
     </div>
   );
 }
-
-// Lead.defaultProps = {
-//   movie: []
-// }
 
 export default Lead;

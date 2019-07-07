@@ -1,0 +1,21 @@
+.myList {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 4.5rem;
+  font-size: 3rem;
+}
+
+.myList__desc {
+  color: gray;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.myList__title {
+  color: white;
+  font-weight: 400;
+  padding-bottom: 15rem;
+}
