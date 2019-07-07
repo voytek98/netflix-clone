@@ -1,4 +1,5 @@
 .navigation__profile {
+    position: relative;
     display: flex;
     align-items: center;
 }
@@ -6,6 +7,12 @@
 .navigation__profile:hover .navigation__profile__dropdown {
     visibility: visible;
     opacity: 1;
+}
+
+.navigation__profile__account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navigation__profile__avatar {
@@ -18,14 +25,46 @@
 }
 
 .navigation__profile__dropdown {
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    display: flex;
+    flex-direction: column;
     visibility: hidden;
     opacity: 0;
-    position: absolute;
-    right: 6rem;
-    top: 6rem;
-    background-color: rgba(0,0,0,.9);
     color: white;
-    width: 200px;
+    width: 180px;
     height: 200px;
-    transition: opacity 300ms;
+    transition: opacity 300ms ease-in-out;
+}
+
+.navigation__profile__dropdown__content {
+    background-color: rgba(0,0,0,.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.navigation__profile__dropdown__list {
+    /* line-height: 2.3rem; */
+    list-style: none;
+    padding: 1rem;
+}
+
+.navigation__profile__dropdown__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 1.2rem;
+}
+
+.navigation__profile__dropdown__item:last-child {
+    padding-bottom: initial;
+}
+
+.navigation__profile__dropdown__icon {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2.2rem;
+    padding-right: 2.7rem;
+    padding-top: 1rem;
+    margin-bottom: -.6rem;
 }
