@@ -12,10 +12,14 @@ const Navigation = ({nav}) => {
       <div className="navigation__menu">
         <div className="navigation__menu__left">
           <Router>
-          <div className="navigation__logo">
-          <NavLink exact to="/" className="navigation__link" activeClassName="navigation__link--active"><img src={logo} alt="logo"/></NavLink>
-            
-          </div>
+            <div className="navigation__collapse">
+              <button className="navigation__hamburger">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+            <div className="navigation__logo">
+            <NavLink exact to="/" className="navigation__link" activeClassName="navigation__link--active"><img src={logo} alt="logo"/></NavLink>
+            </div>
             <button className="navigation__item">
               <NavLink exact to="/" className="navigation__link" activeClassName="navigation__link--active">Home</NavLink>
             </button>

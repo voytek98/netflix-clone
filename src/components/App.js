@@ -4,6 +4,7 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import "../assets/styles/styles.css";
 
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 import HomePage from "../pages/HomePage";
 import TVShows from "../pages/TVShows";
 import Movies from "../pages/Movies";
@@ -43,6 +44,7 @@ class App extends React.Component {
             <Route path='/my-list' component={MyList} />
           </div>
         </Router>
+        <Footer />
       </div>
     );
   }

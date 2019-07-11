@@ -1,0 +1,70 @@
+.footer {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  color: gray;
+}
+
+.footer__break {
+  width: 40%;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+}
+
+.footer__description {
+  text-align: center;
+}
+
+.footer__icon {
+  font-size: 3.5rem;
+  text-decoration: none;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.footer__portfolio {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__social__content {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+/* For tablets */
+@media (max-width: 991.98px) {
+  .footer__content {
+    max-width: 80%;
+  }
+}
+
+/* For landscape phones, low res tablets */
+@media (max-width: 767.98px) {
+  .footer__social {
+    flex-direction: column;
+  }
+}
+
+/* For phones */
+@media (max-width: 575.98px) {
+  .footer__content {
+    max-width: 95%;
+  }
+}
