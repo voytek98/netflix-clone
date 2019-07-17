@@ -17,6 +17,10 @@
   background-color: rgb(20, 20, 20);
 }
 
+.navigation__brand {
+  display: flex;
+}
+
 .navigation__item {
   margin-right: 1.5rem;
   background-color: transparent;
@@ -38,8 +42,13 @@
 
 .navigation__menu {
   display: flex;
+  justify-content: space-between;
   width: 100%;
-  flex-flow: row nowrap;
+}
+
+.navigation__menus {
+  flex-grow: 1;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -63,9 +72,105 @@
   width: 9.5rem;
 }
 
+/* Large devices  */
+@media (min-width: 992px) {
+  .navigation__collapse {
+    display: none;
+  }
+}
+
 /* For tablets and smaller devices */
 @media (max-width: 991.98px) {
   .navigation {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+  }
+
+  .navigation--scrolled {
+    background-color: transparent;
+  }
+
+  .navigation--scrolled .navigation__brand {
+    background-color: rgba(20, 20, 20, 0.8);
+  }
+
+  .navigation__brand {
+    background-color: rgb(20, 20, 20);
+    padding: 1rem 2rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navigation__collapse {
+    display: flex;
+    /* padding: 1rem; */
+    /* padding-right: 1rem;
+    padding-top: 1rem; */
+    margin-right: 2rem;
+  }
+
+  .navigation__hamburger {
+    display: flex;
+    border: none;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+    background-color: transparent;
+    color: white;
+  }
+
+  .navigation__icon {
+    display: none;
+  }
+
+  .navigation__item__profile__name {
+    display: none;
+  }
+
+  .navigation__menu {
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .navigation__menus {
+    background-color: rgb(20, 20, 20);
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 60%;
     padding-left: 2rem;
+    padding: 1rem 0 0 2rem;
+    /* visibility: hidden; */
+  }
+
+  .navigation__menu__left {
+    margin-top: 1rem;
+    flex-direction: column;
+    order: 2;
+    align-items: flex-start;
+  }
+
+  .navigation__menu__left .navigation__item {
+    padding: 0.5rem 0;
+  }
+
+  .navigation__menu__left .navigation__link {
+    padding-left: 1.2rem;
+  }
+
+  .navigation__menu__left .navigation__link--active {
+    padding-left: 1rem;
+    border-left: 2px solid #d82326;
+  }
+
+  .navigation__menu__right {
+    order: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid gray;
   }
 }

@@ -17,16 +17,20 @@ const NavigationSettings = () => {
       <div className="navigation__profile__dropdown">
         <i className="navigation__profile__dropdown__icon fas fa-caret-up" />
         <div className="navigation__profile__dropdown__content">
-          <ul className="navigation__profile__dropdown__list">
+          <ul className="navigation__profile__dropdown__list navigation__profile__dropdown__list__manage">
             <li className="navigation__profile__dropdown__item">
-              <img className="navigation__profile__avatar" src={profile} alt="kids avatar"/>
+              <img
+                className="navigation__profile__avatar"
+                src={profile}
+                alt="kids avatar"
+              />
               Kids
             </li>
             <li className="navigation__profile__dropdown__item">
               Manage Profiles
             </li>
           </ul>
-          <hr/>
+          <hr />
           <ul className="navigation__profile__dropdown__list">
             <li className="navigation__profile__dropdown__item">Account</li>
             <li className="navigation__profile__dropdown__item">Help Center</li>
@@ -39,6 +43,5 @@ const NavigationSettings = () => {
     </div>
   );
 };
-
 
 export default NavigationSettings;

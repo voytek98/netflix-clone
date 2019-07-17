@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="footer__social">
           <div className="footer__social__content">
             <p className="footer__description">Checkout source code on my GitHub</p>
-            <a className="footer__icon" href="https://github.com/WojtasF"><i class="fab fa-github"></i></a>
+            <a className="footer__icon" href="https://github.com/WojtasF"><i className="fab fa-github"></i></a>
           </div>
           <div className="footer__social__content">
             <p className="footer__description">and checkout my portfolio</p>
