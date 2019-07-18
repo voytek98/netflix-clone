@@ -12,6 +12,7 @@
 
 .carousel__list {
   display: flex;
+  justify-content: center;
   width: 100%;
   height: auto;
   -webkit-overflow-scrolling: touch; /* Nice scrolling effect on webkit browsers */
