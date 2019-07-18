@@ -51,8 +51,18 @@
 .card__content__description__overview {
   line-height: 1.2rem;
   margin-top: 0;
-  overflow: hidden;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  overflow-y: auto;
+  text-indent: 2rem;
+  width: 100%;
   justify-content: flex-end;
+  /* font-size: 1.2rem; */
+}
+
+.card__content__description__overview::-webkit-scrollbar {
+  background: transparent;
+  width: 0 !important;
 }
 
 .card__content__description__vote {
@@ -112,11 +122,11 @@
   }
 
   .card:hover {
-    transform: unset!important;
+    transform: unset !important;
   }
 
   .card:hover ~ .card {
-    transform: unset!important;
+    transform: unset !important;
   }
 
   .card__content {
@@ -149,7 +159,6 @@
   .card__content__description__vote {
     font-size: 2rem;
   }
-
 }
 
 /* For landscape phones, low res tablets */

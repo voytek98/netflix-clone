@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { HashRouter as Router, NavLink } from "react-router-dom";
 
 import "./Navigation.css";
@@ -7,13 +7,18 @@ import logo from "../assets/images/logo.svg";
 import NavigationSettings from "./NavigationSettings";
 
 const Navigation = ({ nav }) => {
+  const [collapsed, setCollapsed] = useState(true);
+
   return (
-    <nav className={`navigation${nav ? " navigation--scrolled" : ""}`}>
+    <nav className={`navigation${nav ? " navigation--scrolled" : ""}${collapsed ? " navigation--hidden" : ""}`}>
       <div className="navigation__menu">
         <Router>
-          <div className="navigation__brand">
+          <div className={ `navigation__brand${!collapsed ? " navigation__brand--solid" : ""}` }>
             <div className="navigation__collapse">
-              <button className="navigation__hamburger">
+              <button 
+                className="navigation__hamburger navigation__hamburger--js"
+                onClick={() => setCollapsed(!collapsed)}
+              >
                 <i className="fas fa-bars" />
               </button>
             </div>
@@ -23,7 +28,7 @@ const Navigation = ({ nav }) => {
               </NavLink>
             </div>
           </div>
-          <div className="navigation__menus">
+          <div className={ `navigation__menus${collapsed ? " navigation__menus--hidden" : ""}` }>
             <div className="navigation__menu__left">
               <button className="navigation__item">
                 <NavLink

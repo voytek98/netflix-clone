@@ -95,6 +95,10 @@
     background-color: rgba(20, 20, 20, 0.8);
   }
 
+  .navigation--hidden {
+    height: 0;
+  }
+
   .navigation__brand {
     background-color: rgb(20, 20, 20);
     padding: 1rem 2rem;
@@ -102,11 +106,12 @@
     width: 100%;
   }
 
+  .navigation__brand--solid {
+    background-color: rgb(20, 20, 20)!important;
+  }
+
   .navigation__collapse {
     display: flex;
-    /* padding: 1rem; */
-    /* padding-right: 1rem;
-    padding-top: 1rem; */
     margin-right: 2rem;
   }
 
@@ -142,10 +147,13 @@
     justify-content: flex-start;
     flex-direction: column;
     width: 60%;
-    padding-left: 2rem;
     padding: 1rem 0 0 2rem;
-    /* visibility: hidden; */
+    margin-top: -1px;
   }
+
+  .navigation__menus--hidden {
+    display: none;
+  }  
 
   .navigation__menu__left {
     margin-top: 1rem;

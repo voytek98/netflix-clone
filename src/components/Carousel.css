@@ -44,6 +44,7 @@
   .carousel__list {
     overflow-y: hidden;
     overflow-x: scroll;
+    justify-content: normal;
   }
 
   .carousel__list:hover .card {
