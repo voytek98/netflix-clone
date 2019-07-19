@@ -8,8 +8,8 @@
   position: fixed;
   z-index: 1;
   background-color: transparent;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
   transition: background-color 300ms ease-in-out 100ms;
 }
 

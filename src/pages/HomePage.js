@@ -35,6 +35,7 @@ class HomePage extends React.Component {
         <Carousel 
           title="Popular on Netflix"
           moviesList={this.state.popularNetflix}
+          noMargin={true}
         />
         <Featured />
         <Carousel

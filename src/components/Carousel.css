@@ -39,6 +39,10 @@
   position: relative;
 }
 
+.carousel--no__margin {
+  margin: 0;
+}
+
 /* For tablets and smaller devices */
 @media (max-width: 991.98px) {
   .carousel__list {
