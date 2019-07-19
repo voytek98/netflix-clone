@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { HashRouter as Router, NavLink } from "react-router-dom";
 
 import "./Navigation.css";
@@ -8,6 +8,7 @@ import NavigationSettings from "./NavigationSettings";
 
 const Navigation = ({ nav }) => {
   const [collapsed, setCollapsed] = useState(true);
+  let smallScreen = window.matchMedia('(max-width: 991.98px)');
 
   return (
     <nav className={`navigation${nav ? " navigation--scrolled" : ""}${collapsed ? " navigation--hidden" : ""}`}>
@@ -23,14 +24,14 @@ const Navigation = ({ nav }) => {
               </button>
             </div>
             <div className="navigation__logo">
-              <NavLink exact to="/" className="navigation__link">
+              <NavLink exact to="/" className="navigation__link" onClick={() => smallScreen.matches ? setCollapsed(!collapsed) : null}>
                 <img src={logo} alt="logo" />
               </NavLink>
             </div>
           </div>
           <div className={ `navigation__menus${collapsed ? " navigation__menus--hidden" : ""}` }>
             <div className="navigation__menu__left">
-              <button className="navigation__item">
+              <button className="navigation__item" onClick={() => smallScreen.matches ? setCollapsed(!collapsed) : null}>
                 <NavLink
                   exact
                   to="/"
@@ -40,7 +41,7 @@ const Navigation = ({ nav }) => {
                   Home
                 </NavLink>
               </button>
-              <button className="navigation__item">
+              <button className="navigation__item" onClick={() => smallScreen.matches ? setCollapsed(!collapsed) : null}>
                 <NavLink
                   to="/tv-shows"
                   className="navigation__link"
@@ -49,7 +50,7 @@ const Navigation = ({ nav }) => {
                   TV Shows
                 </NavLink>
               </button>
-              <button className="navigation__item">
+              <button className="navigation__item" onClick={() => smallScreen.matches ? setCollapsed(!collapsed) : null}>
                 <NavLink
                   to="/movies"
                   className="navigation__link"
@@ -58,7 +59,7 @@ const Navigation = ({ nav }) => {
                   Movies
                 </NavLink>
               </button>
-              <button className="navigation__item">
+              <button className="navigation__item" onClick={() => smallScreen.matches ? setCollapsed(!collapsed) : null}>
                 <NavLink
                   to="/recently-added"
                   className="navigation__link"
@@ -67,7 +68,7 @@ const Navigation = ({ nav }) => {
                   Recently Added
                 </NavLink>
               </button>
-              <button className="navigation__item">
+              <button className="navigation__item" onClick={() => smallScreen.matches ? setCollapsed(!collapsed) : null}>
                 <NavLink
                   to="/my-list"
                   className="navigation__link"
