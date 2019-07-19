@@ -2,6 +2,7 @@ import React from 'react';
 
 import Carousel from '../components/Carousel';
 import Lead from '../components/Lead';
+import Featured from "../components/Featured";
 
 import {trending, popularNetflix, topRatedMovies, newComedyMovies, randomNetflixTitle} from '../api/requests';
 
@@ -30,11 +31,12 @@ class HomePage extends React.Component {
           title="Trending Now"
           moviesList={this.state.trending}
           first={true}
-          />
+        />
         <Carousel 
           title="Popular on Netflix"
           moviesList={this.state.popularNetflix}
-          />
+        />
+        <Featured />
         <Carousel
           title="Top Rated"
           moviesList={this.state.topRatedMovies} 
