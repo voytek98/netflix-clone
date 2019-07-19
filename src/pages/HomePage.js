@@ -25,7 +25,7 @@ class HomePage extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="main-content">
         <Lead movie={ this.state.randomNetflixTitle } />
         <Carousel
           title="Trending Now"

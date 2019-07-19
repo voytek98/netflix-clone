@@ -4,9 +4,11 @@ import './MyList.css';
 
 const MyList = ()=> {
   return (
-    <div className="myList">
-      <h2 className="myList__title">My List</h2>
-      <p className="myList__desc">You haven't added any titles to your list yet.</p>
+    <div className="main-content">
+      <div className="my__list">
+        <h2 className="my__list__title">My List</h2>
+        <p className="my__list__desc">You haven't added any titles to your list yet.</p>
+      </div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-.myList {
+.my__list {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -8,13 +8,13 @@
   font-size: 3rem;
 }
 
-.myList__desc {
+.my__list__desc {
   color: gray;
   font-size: 2rem;
   text-align: center;
 }
 
-.myList__title {
+.my__list__title {
   color: white;
   font-weight: 400;
   padding-bottom: 15rem;

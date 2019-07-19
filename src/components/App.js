@@ -33,16 +33,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <Navigation nav={this.state.scrolled} />
         <Router>
-          <div className="wrapper">
-            <Route exact path='/' component={HomePage} />
-            <Route path='/tv-shows' component={TVShows} />
-            <Route path='/movies' component={Movies} />
-            <Route path='/recently-added' component={RecentlyAdded} />
-            <Route path='/my-list' component={MyList} />
-          </div>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/tv-shows' component={TVShows} />
+          <Route path='/movies' component={Movies} />
+          <Route path='/recently-added' component={RecentlyAdded} />
+          <Route path='/my-list' component={MyList} />
         </Router>
         <Footer />
       </div>
