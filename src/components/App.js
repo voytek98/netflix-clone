@@ -10,6 +10,7 @@ import TVShows from "../pages/TVShows";
 import Movies from "../pages/Movies";
 import RecentlyAdded from "../pages/RecentlyAdded";
 import MyList from "../pages/MyList";
+import Search from "../pages/Search";
 
 class App extends React.Component {
   state = {
@@ -37,6 +38,7 @@ class App extends React.Component {
         <Navigation nav={this.state.scrolled} />
         <Router>
           <Route exact path='/' component={HomePage} />
+          <Route exact path='/search' component={Search} />
           <Route path='/tv-shows' component={TVShows} />
           <Route path='/movies' component={Movies} />
           <Route path='/recently-added' component={RecentlyAdded} />

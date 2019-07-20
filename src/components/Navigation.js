@@ -5,6 +5,7 @@ import "./Navigation.css";
 import logo from "../assets/images/logo.svg";
 
 import NavigationSettings from "./NavigationSettings";
+import SearchBox from "./SearchBox";
 
 const Navigation = ({ nav }) => {
   const [collapsed, setCollapsed] = useState(true);
@@ -79,6 +80,7 @@ const Navigation = ({ nav }) => {
               </button>
             </div>
             <div className="navigation__menu__right">
+              <SearchBox />
               <button className="navigation__item navigation__icon">
                 <i className="fas fa-search" />
               </button>
