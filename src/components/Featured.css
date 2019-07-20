@@ -46,3 +46,20 @@
   width: 40%;
   color: white;
 }
+
+/* For tablets and smaller devices */
+@media (max-width: 991.98px) {
+  .featured__background img {
+    opacity: .2;
+  }
+  
+  .featured__image {
+    display: none;
+  }
+
+  .featured__lead {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+  }
+}

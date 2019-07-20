@@ -36,6 +36,7 @@
 }
 
 .lead__content__icons {
+  display: flex;
   margin-bottom: 2em;
 }
 
@@ -44,6 +45,9 @@
 }
 
 .lead__content__icons__button {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
   border-radius: .25em;
   font-weight: 600;
   font-size: 1.75rem;
@@ -57,7 +61,17 @@
 /* For tablets and smaller devices */
 @media (max-width: 991.98px) {
   .lead {
-    visibility: hidden;
-    height: 20rem;
+    display: none;
   }
+  .lead__content__icons {
+    justify-content: center;
+    order: 3;
+  }
+
+  .lead__content__title {
+    padding: 0;
+  }
+}
+/* For mobile phones */
+@media (max-width: 575.98px) {
 }
