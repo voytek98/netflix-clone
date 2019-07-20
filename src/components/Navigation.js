@@ -24,7 +24,7 @@ const Navigation = ({ nav }) => {
               </button>
             </div>
             <div className="navigation__logo">
-              <NavLink exact to="/" className="navigation__link" onClick={() => smallScreen.matches ? setCollapsed(!collapsed) : null}>
+              <NavLink exact to="/" className="navigation__link" onClick={() => smallScreen.matches && !collapsed ? setCollapsed(!collapsed) : null}>
                 <img src={logo} alt="logo" />
               </NavLink>
             </div>
