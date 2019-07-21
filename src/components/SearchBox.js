@@ -1,45 +1,54 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { withRouter } from "react-router-dom";
 
 import "./SearchBox.css";
 
-class SearchBox extends React.Component {
-  state = {
-    value: ""
-  }
+import Context from "../store/context";
 
-  handleChange = async (e) => {
-    // If user type at least one character, app redirect to search route
-    await this.setState({value: e.target.value})
-
-    if (this.props.location.pathname !== '/search') {
-      if (this.state.value.length >= 1) {
-        this.props.history.push('/search')
-      }
-    } else { //If searchbox is empty app goes back to previous page
-      if (this.state.value.length === 0) {
-        this.props.history.goBack()
-      }
-    }
-  }
-
-  handleSubmit = (e) => {
-    console.log(this.state.value)
-    this.props.history.push(`/search/${this.state.value}`)
-    e.preventDefault()
-  }
+const SearchBox = ( { location, history }) => {
+  const { state, actions } = useContext(Context);
+  const [value, setValue] = useState("");
   
-  render() {
+  // const handleChange = (event) => {
+  //   // If user type at least one character, app redirect to search route
+  //   // console.log(event.length)
+  //   setValue(event)
+  //   if (location.pathname !== '/search') {
+  //     if (event.length >= 1) {
+  //       history.push('/search')
+  //     }
+  //   } else { //If searchbox is empty app goes back to previous page
+  //     if (event.length === 0) {
+  //       actions({ type: "setState", payload: { ...state, result: event } })
+  //       history.goBack()
+  //     }
+  //   }
+    
+  // }
 
-    return (
-      <form onSubmit={this.handleSubmit} action="">
-        <label htmlFor="">
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="submit" />
-      </form>
-    )
+  const handleSubmit = () => {
+    if (location.pathname !== '/search') {
+      history.push('/search')
+    }
+    actions({ type: "setState", payload: { ...state, result: value } })
   }
-}
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      action=""
+    >
+      <label htmlFor="">
+        <input
+          type="text"
+          value={value}
+          onChange={e => setValue(e.target.value)}
+        />
+      </label>
+      <input type="submit" value="submit" />
+    </form>
+  );
+  // }
+};
 
 export default withRouter(SearchBox);

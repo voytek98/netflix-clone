@@ -5,7 +5,6 @@ import "../assets/styles/styles.css";
 
 import Navigation from "./Navigation";
 import Footer from "./Footer";
-import SearchResult from "./SearchResult";
 import HomePage from "../pages/HomePage";
 import TVShows from "../pages/TVShows";
 import Movies from "../pages/Movies";

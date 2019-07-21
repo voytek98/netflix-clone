@@ -1,0 +1,31 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-top: 7rem;
+  padding: 0 5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.search__results {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card--search {
+  /* flex: auto 1 40%; */
+  margin: .5rem;
+  max-height: 300px;
+  transition: unset;
+}
+
+.card--search:hover {
+  transform: unset !important;
+}
+
+.card--search:hover ~ .card {
+  transform: unset !important;
+}

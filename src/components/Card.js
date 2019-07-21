@@ -1,16 +1,17 @@
 import React from "react";
 
 import './Card.css';
+import placeholder from '../assets/images/placeholder-black.png';
 
-const Card = ({ video }) => {
+const Card = ({ video, search }) => {
   // Base url for thumbnails
   let thumbnail = "https://image.tmdb.org/t/p/w342";
 
   return (
-    <div className="card">
+    <div className={`card ${search? `card--search` : null}`}>
       <div className="card__overlay overlay--black"></div>
       <div className="card__image">
-        <img src={`${thumbnail}${video.poster_path}`} alt="thumbnail" />
+        <img src={video.poster_path? `${thumbnail}${video.poster_path}` : placeholder} alt="thumbnail" />
       </div>
       <div className="card__content">
         <div className="card__content__description">
