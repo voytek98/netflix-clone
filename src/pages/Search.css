@@ -1,4 +1,6 @@
 .search__results {
     margin-top: 7rem;
     padding: 0 5rem;
+    height: 70vh;
+    border: 1px solid red;
 }

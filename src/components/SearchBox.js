@@ -25,6 +25,7 @@ class SearchBox extends React.Component {
 
   handleSubmit = (e) => {
     console.log(this.state.value)
+    this.props.history.push(`/search/${this.state.value}`)
     e.preventDefault()
   }
   

@@ -5,6 +5,7 @@ import "../assets/styles/styles.css";
 
 import Navigation from "./Navigation";
 import Footer from "./Footer";
+import SearchResult from "./SearchResult";
 import HomePage from "../pages/HomePage";
 import TVShows from "../pages/TVShows";
 import Movies from "../pages/Movies";
@@ -38,7 +39,8 @@ class App extends React.Component {
         <Navigation nav={this.state.scrolled} />
         <Router>
           <Route exact path='/' component={HomePage} />
-          <Route exact path='/search' component={Search} />
+          <Route path='/search' component={Search} />
+          <Route path='/search/:id' />
           <Route path='/tv-shows' component={TVShows} />
           <Route path='/movies' component={Movies} />
           <Route path='/recently-added' component={RecentlyAdded} />

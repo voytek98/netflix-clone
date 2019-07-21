@@ -1,12 +1,13 @@
 import React from "react";
 
 import './Search.css';
+import SearchResult from "../components/SearchResult";
 
 const Search = () => {
   return (
     <div className="main-content">
       <div className="search__results">
-        <h1>hello world</h1>
+        <SearchResult />
       </div>
     </div>
   )
