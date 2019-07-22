@@ -5,7 +5,7 @@ import "./SearchBox.css";
 
 import Context from "../store/context";
 
-const SearchBox = ( { location, history }) => {
+const SearchBox = ( { location, history, small }) => {
   const { state, actions } = useContext(Context);
   const [value, setValue] = useState("");
   
@@ -37,15 +37,20 @@ const SearchBox = ( { location, history }) => {
     <form
       onSubmit={handleSubmit}
       action=""
+      className={`search__form ${small ? `search__form--mobile` : `search__form--large`}`}
     >
-      <label htmlFor="">
+      <label className="search__form__label" htmlFor="">
         <input
+          className="search__form__input"
           type="text"
           value={value}
           onChange={e => setValue(e.target.value)}
         />
       </label>
-      <input type="submit" value="submit" />
+      <button className="search__form__button">
+        <i className="search__form__icon fas fa-search" />
+        <input className="search__form__submit" type="submit" value="" />
+      </button>
     </form>
   );
   // }

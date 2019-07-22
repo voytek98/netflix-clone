@@ -29,6 +29,7 @@ const Navigation = ({ nav }) => {
                 <img src={logo} alt="logo" />
               </NavLink>
             </div>
+            <SearchBox small/>
           </div>
           <div className={ `navigation__menus${collapsed ? " navigation__menus--hidden" : ""}` }>
             <div className="navigation__menu__left">
@@ -81,9 +82,6 @@ const Navigation = ({ nav }) => {
             </div>
             <div className="navigation__menu__right">
               <SearchBox />
-              <button className="navigation__item navigation__icon">
-                <i className="fas fa-search" />
-              </button>
               <button className="navigation__item navigation__item__profile__name">
                 KIDS
               </button>

@@ -26,9 +26,12 @@ const SearchResult = () => {
       }
     });
 
-    // Exclude persons from multi search
+    // Exclude persons and titles without description from multi search
     let filteredSearch = res.data.results.filter((el)=> {
-      return el.media_type !== 'person'
+      return (
+        el.media_type !== "person" &&
+        el.overview !== ""
+      )
     })
 
     setTitlesList(filteredSearch)
