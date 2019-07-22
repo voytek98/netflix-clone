@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 import './Card.css';
 import placeholder from '../assets/images/placeholder-black.png';
@@ -22,7 +23,14 @@ const Card = ({ video, search }) => {
         <div className="card__content__icons">
           <button className="card__icon"><i className="far fa-thumbs-up"></i></button>
           <button className="card__icon"><i className="far fa-thumbs-down"></i></button>
-          <button className="card__icon"><i className="fas fa-plus"></i></button>
+          <Link to={
+            video.title ? `/search/movie/${video.id}` :
+            (video.name ? `/search/tv/${video.id}`: null)
+          }>
+            <button className="card__icon">
+              <i className="fas fa-plus"></i>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

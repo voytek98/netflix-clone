@@ -1,0 +1,48 @@
+.about__background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.about__background img {
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+}
+
+.about__title {
+  display: flex;
+  justify-content: center;
+  height: 70%;
+}
+
+.about__title__poster {
+  width: 30%;
+}
+.about__title__poster img {
+  height: 100%;
+  width: 100%;
+}
+
+.about__title__description {
+  font-size: 2rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0 2rem;
+  width: 40%;
+}
+
+.show__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* margin-top: 7rem; */
+  /* padding: 0 5rem; */
+  height: 100vh;
+}

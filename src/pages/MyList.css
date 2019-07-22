@@ -1,10 +1,10 @@
 .my__list {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 75vh;
   padding-left: 6rem;
   padding-right: 6rem;
-  padding-top: 4.5rem;
+  margin-top: 7rem;
   font-size: 3rem;
 }
 

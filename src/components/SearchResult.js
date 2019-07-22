@@ -21,8 +21,7 @@ const SearchResult = () => {
     let res = await moviesdb.get("/search/multi", {
       params: { 
         api_key: process.env.REACT_APP_API,
-        query: searchQuery,
-        media_type: 'movie'
+        query: searchQuery
       }
     });
 
