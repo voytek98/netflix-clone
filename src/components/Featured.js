@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from "react";
 
 import "./Featured.css"
+import placeholderImage from "../assets/images/placeholder-black.png";
 
 import {randomNetflixTitle} from '../api/requests';
 
@@ -20,16 +21,26 @@ const Featured = () => {
     <div className="featured">
       <div className="featured__background">
         <img 
-          src={
-            mobileScreen.matches ? `${posterImage}${random.poster_path}` :
-            `${baseImage}${random.backdrop_path}`
-          } 
+          src={ 
+            // Prevent 404 error
+            typeof random.backdrop_path == "undefined" ? placeholderImage :
+            // Set background image depend on user screen size
+            (mobileScreen.matches ? `${posterImage}${random.poster_path}` :
+            `${baseImage}${random.backdrop_path}`)
+          }
           alt=""
         />
       </div>
       <div className="featured__content">
         <div className="featured__image">
-          <img src={`${baseImage}${random.backdrop_path}`} alt=""/>
+          <img 
+            src={
+              // Prevent 404 error
+              typeof random.backdrop_path == "undefined" ? placeholderImage :
+              `${baseImage}${random.backdrop_path}`
+            } 
+            alt=""
+          />
         </div>
         <div className="featured__lead">
           <h2 className="lead__content__title">{random.title || random.name}</h2>
