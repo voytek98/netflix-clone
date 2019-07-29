@@ -52,6 +52,8 @@
   }
   .search__form--mobile {
     display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
     margin-left: auto;
   }
 }
