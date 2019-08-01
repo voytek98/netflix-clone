@@ -39,7 +39,6 @@
 .search__form__submit {
   padding: 0;
   display: none;
-  /* visibility: hidden; */
 }
 
 .search__form--mobile {
@@ -52,8 +51,9 @@
   }
   .search__form--mobile {
     display: flex;
-    justify-content: space-between;
-    /* flex-wrap: wrap; */
     margin-left: auto;
+  }
+  .search__form__input {
+    width: 100%;
   }
 }
