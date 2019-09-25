@@ -26,11 +26,12 @@ const SearchBox = ( { location, history, small }) => {
     
   // }
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
     if (location.pathname !== '/search') {
       history.push('/search')
     }
     actions({ type: "setState", payload: { ...state, result: value } })
+    event.preventDefault();
   }
 
   return (
