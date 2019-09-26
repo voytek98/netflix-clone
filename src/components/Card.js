@@ -9,7 +9,7 @@ const Card = ({ video, search }) => {
   let thumbnail = "https://image.tmdb.org/t/p/w342";
 
   return (
-    <div className={`card ${search? `card--search` : null}`}>
+    <div className={`card${search? ` card--search` : ''}`}>
       <div className="card__overlay overlay--black"></div>
       <div className="card__image">
         <img src={video.poster_path? `${thumbnail}${video.poster_path}` : placeholder} alt="thumbnail" />
