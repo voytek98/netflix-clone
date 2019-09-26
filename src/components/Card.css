@@ -9,6 +9,7 @@
 
 .card:hover {
   transform: scale(1.5) !important;
+  cursor: pointer;
 }
 
 .card:hover ~ .card {
@@ -130,6 +131,7 @@
   }
 
   .card__content {
+    display: none;
     flex-direction: column;
     padding: 1px;
   }

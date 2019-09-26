@@ -1,15 +1,28 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import './Card.css';
 import placeholder from '../assets/images/placeholder-black.png';
 
-const Card = ({ video, search }) => {
+const Card = ({ video, search, history }) => {
   // Base url for thumbnails
   let thumbnail = "https://image.tmdb.org/t/p/w342";
+  let smallScreen = window.matchMedia('(max-width: 991.98px)');
+
+  const handleClick = (e) => {
+    if(smallScreen.matches) {
+      history.push(`${
+        video.title ? `/search/movie/${video.id}` :
+        (video.name ? `/search/tv/${video.id}`: null)
+      }`)
+    } else {
+      return null
+    }
+    e.preventDefault();
+  }
 
   return (
-    <div className={`card${search? ` card--search` : ''}`}>
+    <div className={`card${search? ` card--search` : ''}`} onClick={handleClick}>
       <div className="card__overlay overlay--black"></div>
       <div className="card__image">
         <img src={video.poster_path? `${thumbnail}${video.poster_path}` : placeholder} alt="thumbnail" />
@@ -37,4 +50,4 @@ const Card = ({ video, search }) => {
   );
 };
 
-export default Card;
+export default withRouter(Card);
