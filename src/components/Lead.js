@@ -17,7 +17,7 @@ const Lead = ({movie}) => {
       <div className="lead__background">
         <img
           src={
-            typeof movie.backdrop_path == "undefined" ? initialImage : `${baseImage}${movie.backdrop_path}`
+            typeof movie.backdrop_path == ("undefined" || "null") ? initialImage : `${baseImage}${movie.backdrop_path}`
           }
           alt="background"
           className="lead__background__image"
