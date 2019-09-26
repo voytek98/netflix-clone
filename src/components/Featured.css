@@ -49,6 +49,13 @@
 
 /* For tablets and smaller devices */
 @media (max-width: 991.98px) {
+  .featured {
+    min-height: 60vh;
+  }
+  .featured__background {
+    top: initial;
+    height: 100%;
+  }
   .featured__background img {
     opacity: .2;
   }
@@ -61,5 +68,12 @@
     text-align: center;
     width: 100%;
     padding: 0;
+  }
+}
+/* For phones */
+@media (max-width: 575.98px) {
+  .featured {
+    padding: 0 1rem;
+    height: initial;
   }
 }
