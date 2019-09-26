@@ -58,6 +58,16 @@
   color: white;
 }
 
+.lead__content__icons__button:focus {
+  outline: 0;
+}
+
+.lead__content__icons__button:hover {
+  transform: scale(1.1);
+  transition: .2s ease;
+  cursor: pointer;
+}
+
 /* For tablets and smaller devices */
 @media (max-width: 991.98px) {
   .lead {

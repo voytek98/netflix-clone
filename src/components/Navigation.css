@@ -127,6 +127,10 @@
     color: white;
   }
 
+  .navigation__hamburger:focus {
+    outline: 0;
+  }
+
   .navigation__icon {
     display: none;
   }
