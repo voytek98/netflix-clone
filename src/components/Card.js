@@ -36,13 +36,11 @@ const Card = ({ video, search, history }) => {
         <div className="card__content__icons">
           <button className="card__icon"><i className="far fa-thumbs-up"></i></button>
           <button className="card__icon"><i className="far fa-thumbs-down"></i></button>
-          <Link to={
+          <Link className="card__icon" to={
             video.title ? `/search/movie/${video.id}` :
             (video.name ? `/search/tv/${video.id}`: null)
           }>
-            <button className="card__icon">
-              <i className="fas fa-info"></i>
-            </button>
+            <i className="fas fa-info"></i>
           </Link>
         </div>
       </div>

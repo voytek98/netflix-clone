@@ -91,7 +91,7 @@
   border: 1px solid gray;
   transition: transform 300ms ease-in-out 100ms;
   outline: 0;
-  width: 100%;
+  text-align: center;
 }
 
 .card__icon:hover {
