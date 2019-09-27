@@ -41,7 +41,7 @@ const Card = ({ video, search, history }) => {
             (video.name ? `/search/tv/${video.id}`: null)
           }>
             <button className="card__icon">
-              <i className="fas fa-plus"></i>
+              <i className="fas fa-info"></i>
             </button>
           </Link>
         </div>

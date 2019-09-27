@@ -90,6 +90,8 @@
   border-radius: 50%;
   border: 1px solid gray;
   transition: transform 300ms ease-in-out 100ms;
+  outline: 0;
+  width: 100%;
 }
 
 .card__icon:hover {
