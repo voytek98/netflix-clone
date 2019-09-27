@@ -20,6 +20,10 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
+.visible {
+  opacity: 1!important;
+}
+
 @media (max-width: 991.98px) {
   .main-content {
     margin-top: 7rem;
