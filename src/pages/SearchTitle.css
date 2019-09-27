@@ -21,7 +21,7 @@
 }
 
 .about__title__poster {
-  width: 30%;
+  width: 27%;
 }
 .about__title__poster img {
   height: 100%;
@@ -39,6 +39,23 @@
 
 .about__title__description * {
   margin: 0 0 1rem 0;
+}
+
+.card__content__icons--result {
+  flex-direction: row;
+}
+
+.card__content__icons--result .card__icon {
+  padding: 1rem;
+  font-size: 3rem;
+}
+
+.card__content__icons--result .card__icon:first-child {
+  margin-right: 1rem;
+}
+
+.card__content__icons--result .card__icon i {
+  margin: 0;
 }
 
 .find__title {

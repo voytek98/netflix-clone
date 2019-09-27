@@ -92,6 +92,10 @@ const SearchTitle = ({ match }) => {
                 } season(s) ${title.number_of_episodes} episodes`}</h2>
               ) : null}
               <p className="show__overview">{title.overview}</p>
+              <div className="card__content__icons card__content__icons--result">
+                <button className="card__icon"><i className="far fa-thumbs-up"></i></button>
+                <button className="card__icon"><i className="far fa-thumbs-down"></i></button>
+              </div>
             </div>
           </div>
         </div>
