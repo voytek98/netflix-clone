@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 
 import "./Featured.css"
-import placeholderImage from "../assets/images/placeholder-black.png";
+import placeholder from "../assets/images/placeholder-black.png";
 
 import {randomNetflixTitle} from '../api/requests';
 
@@ -23,7 +23,7 @@ const Featured = () => {
         <img 
           src={ 
             // Prevent 404 error
-            typeof random.backdrop_path == "undefined" ? placeholderImage :
+            typeof random.backdrop_path == ("undefined" || "null") ? placeholder :
             // Set background image depend on user screen size
             (mobileScreen.matches ? `${posterImage}${random.poster_path}` :
             `${baseImage}${random.backdrop_path}`)
@@ -36,7 +36,7 @@ const Featured = () => {
           <img 
             src={
               // Prevent 404 error
-              typeof random.backdrop_path == "undefined" ? placeholderImage :
+              typeof random.backdrop_path == ("undefined" || "null") ? placeholder :
               `${baseImage}${random.backdrop_path}`
             } 
             alt=""
