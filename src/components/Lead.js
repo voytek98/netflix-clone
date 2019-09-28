@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import "./Lead.css";
 import placeholder from "../assets/images/placeholder-black.png";
@@ -37,9 +38,11 @@ const Lead = ({movie}) => {
         <div className="lead__content">
           <h2 className="lead__content__title">{movie.title || movie.name}</h2>
           <div className="lead__content__icons">
-            <button className="lead__content__icons__button">
+            <Link className="lead__content__icons__button" to={
+              movie.title ? `/search/movie/${movie.id}` : `/search/tv/${movie.id}`
+            }>
               <i className="lead__content__icons__icon fas fa-play" />Play
-            </button>
+            </Link>
             <button className="lead__content__icons__button">
               <i className="lead__content__icons__icon fas fa-plus" />My list
             </button>
