@@ -36,7 +36,11 @@ const SearchTitle = ({ match }) => {
 
   return (
     <div className="main-content">
-      {isLoading ? (<div>isLoading.....</div>) :
+      {isLoading ? (
+        <div className="find__title">
+          <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+        ) :
         (<div className="find__title">
           <div className="about__background">
             <img
