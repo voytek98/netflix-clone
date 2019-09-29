@@ -37,7 +37,9 @@ class HomePage extends React.Component {
           moviesList={this.state.popularNetflix}
           noMargin={true}
         />
-        <Featured />
+        <Featured
+          title={randomNetflixTitle}
+        />
         <Carousel
           title="Top Rated"
           moviesList={this.state.topRatedMovies} 

@@ -1,47 +1,49 @@
 import React from 'react';
 
 import Carousel from '../components/Carousel';
+import Featured from '../components/Featured';
 import Lead from '../components/Lead';
 
-import {trending, popularNetflix, topRatedMovies, newComedyMovies, randomNetflixTitle} from '../api/requests';
+import {newScifiMovies, newAnimationMovies, newHorrorTvShows, newComedyTvShows, randomTrending, randomTvShow} from '../api/requests';
 
 class RecentlyAdded extends React.Component {
   state = {
-    trending: [],
-    popularNetflix: [],
-    randomNetflixTitle: {},
-    topRatedMovies: [],
-    newComedyMovies: []
+    newScifiMovies: [],
+    newAnimationMovies: [],
+    randomTrending: {},
+    newHorrorTvShows: [],
+    newComedyTvShows: []
   };
 
   componentDidMount() {
-    trending().then(trending => this.setState({trending}))
-    popularNetflix().then(popularNetflix => this.setState({popularNetflix}));
-    randomNetflixTitle().then(randomNetflixTitle => this.setState({randomNetflixTitle}))
-    topRatedMovies().then(topRatedMovies => this.setState({topRatedMovies}));
-    newComedyMovies().then(newComedyMovies => this.setState({newComedyMovies}));
+    newScifiMovies().then(newScifiMovies => this.setState({newScifiMovies}))
+    newAnimationMovies().then(newAnimationMovies => this.setState({newAnimationMovies}));
+    randomTrending().then(randomTrending => this.setState({randomTrending}))
+    newHorrorTvShows().then(newHorrorTvShows => this.setState({newHorrorTvShows}));
+    newComedyTvShows().then(newComedyTvShows => this.setState({newComedyTvShows}));
   };
   
   render() {
     return (
       <div className="main-content">
-        <Lead movie={ this.state.randomNetflixTitle } />
+        <Lead movie={ this.state.randomTrending } />
         <Carousel
-          title="Trending Now"
-          moviesList={this.state.trending}
+          title="Sci-Fi movies"
+          moviesList={this.state.newScifiMovies}
           first={true}
           />
         <Carousel 
-          title="Popular on Netflix"
-          moviesList={this.state.popularNetflix}
+          title="Animation movies"
+          moviesList={this.state.newAnimationMovies}
           />
+        <Featured title={randomTvShow} />
         <Carousel
-          title="Top Rated"
-          moviesList={this.state.topRatedMovies} 
+          title="Horror TV Shows"
+          moviesList={this.state.newHorrorTvShows} 
         />
         <Carousel 
-          title="Latest Comedy Movies"
-          moviesList={this.state.newComedyMovies}
+          title="Comedy TV Shows"
+          moviesList={this.state.newComedyTvShows}
         />
       </div>
     )

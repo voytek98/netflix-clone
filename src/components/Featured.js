@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import "./Featured.css"
 import placeholder from "../assets/images/placeholder-black.png";
 
-import {randomNetflixTitle} from '../api/requests';
-
-const Featured = () => {
+const Featured = ({title}) => {
   const [random, setRandom] = useState({})
 
   let mobileScreen = window.matchMedia('(max-width: 575.98px)');
@@ -15,8 +13,8 @@ const Featured = () => {
   let posterImage = "https://image.tmdb.org/t/p/w500";
   
   useEffect(()=> {
-    randomNetflixTitle().then(randomNetflixTitle => setRandom(randomNetflixTitle))  
-  }, []);
+    title().then(title => setRandom(title))  
+  }, [title]);
 
   return (
     <div className="featured">

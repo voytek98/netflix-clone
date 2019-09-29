@@ -1,47 +1,49 @@
 import React from 'react';
 
 import Carousel from '../components/Carousel';
+import Featured from '../components/Featured';
 import Lead from '../components/Lead';
 
-import {trending, popularNetflix, topRatedMovies, newComedyMovies, randomNetflixTitle} from '../api/requests';
+import {trendingTvToday, newActionTvShows, upcomingTvShows, newComedyTvShows, randomTvShow} from '../api/requests';
 
 class TVShows extends React.Component {
   state = {
-    trending: [],
-    popularNetflix: [],
-    randomNetflixTitle: {},
-    topRatedMovies: [],
-    newComedyMovies: []
+    trendingTvToday: [],
+    newActionTvShows: [],
+    randomTvShow: {},
+    upcomingTvShows: [],
+    newComedyTvShows: []
   };
 
   componentDidMount() {
-    trending().then(trending => this.setState({trending}))
-    popularNetflix().then(popularNetflix => this.setState({popularNetflix}));
-    randomNetflixTitle().then(randomNetflixTitle => this.setState({randomNetflixTitle}))
-    topRatedMovies().then(topRatedMovies => this.setState({topRatedMovies}));
-    newComedyMovies().then(newComedyMovies => this.setState({newComedyMovies}));
+    trendingTvToday().then(trendingTvToday => this.setState({trendingTvToday}))
+    newActionTvShows().then(newActionTvShows => this.setState({newActionTvShows}));
+    randomTvShow().then(randomTvShow => this.setState({randomTvShow}))
+    upcomingTvShows().then(upcomingTvShows => this.setState({upcomingTvShows}));
+    newComedyTvShows().then(newComedyTvShows => this.setState({newComedyTvShows}));
   };
   
   render() {
     return (
       <div className="main-content">
-        <Lead movie={this.state.randomNetflixTitle} />
+        <Lead movie={this.state.randomTvShow} />
         <Carousel 
-          title="Popular on Netflix"
-          moviesList={this.state.popularNetflix}
+          title="Action"
+          moviesList={this.state.newActionTvShows}
           first={true}
           />
         <Carousel
           title="Trending Now"
-          moviesList={this.state.trending}
+          moviesList={this.state.trendingTvToday}
           />
         <Carousel
-          title="Top Rated"
-          moviesList={this.state.topRatedMovies} 
+          title="Upcoming"
+          moviesList={this.state.upcomingTvShows} 
         />
+        <Featured title={randomTvShow}/>
         <Carousel 
-          title="Latest Comedy Movies"
-          moviesList={this.state.newComedyMovies}
+          title="Comedy"
+          moviesList={this.state.newComedyTvShows}
         />
       </div>
     )
