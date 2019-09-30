@@ -6,7 +6,7 @@
   height: 7rem;
   font-size: 1.35rem;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   background-color: transparent;
   padding-left: 5rem;
   padding-right: 5rem;
@@ -154,6 +154,7 @@
     width: 60%;
     padding: 1rem 0 0 2rem;
     margin-top: -1px;
+    animation: .7s slideIn ease-out;
   }
 
   .navigation__menus--hidden {
