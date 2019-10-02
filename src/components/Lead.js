@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./Lead.css";
 import placeholder from "../assets/images/placeholder-black.png";
+import {LoadingCircle} from "./LoadingSpinners";
 
 const Lead = ({movie}) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,12 +19,7 @@ const Lead = ({movie}) => {
 
   return (
     <div className="lead">
-      {isLoading?
-        (
-          <div className="spinner">
-            <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
-          </div>
-        ) :
+      {isLoading? <LoadingCircle /> :
         (<div className="lead-wrapper">
         <div className="lead__background">
           <img

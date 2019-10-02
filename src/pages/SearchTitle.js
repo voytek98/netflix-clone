@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 
+import { LoadingCircle } from '../components/LoadingSpinners';
+
 import "./SearchTitle.css";
 import moviesdb from "../api/moviedb";
 
@@ -38,9 +40,7 @@ const SearchTitle = ({ match }) => {
     <div className="main-content">
       {isLoading ? (
         <div className="find__title">
-          <div className="spinner">
-            <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
-          </div>
+          <LoadingCircle />
         </div>
         ) :
         (<div className="find__title">
