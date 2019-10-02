@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
+
+import { LoadingRectangles } from "../components/LoadingSpinners";
 
 import './Card.css';
 import placeholder from '../assets/images/placeholder-black.png';
 
 const Card = ({ video, search, history }) => {
+  const [isLoading, setIsLoading] = useState(true);
   // Base url for thumbnails
   let thumbnail = "https://image.tmdb.org/t/p/w342";
   let smallScreen = window.matchMedia('(max-width: 991.98px)');
@@ -20,9 +23,19 @@ const Card = ({ video, search, history }) => {
     }
     e.preventDefault();
   }
+  useEffect(()=> {
+    if(video.id) {
+      setIsLoading(false)
+    }
+  }, [video])
 
   return (
-    <div className={`card${search? ` card--search` : ''}`} onClick={handleClick}>
+    <>
+    { isLoading? 
+      (<div className={`card${search? ` card--search` : ''}`} onClick={handleClick}>
+        <LoadingRectangles />
+      </div>) :
+    (<div className={`card${search? ` card--search` : ''}`} onClick={handleClick}>
       <div className="card__overlay overlay--black"></div>
       <div className="card__image">
         <img src={video.poster_path? `${thumbnail}${video.poster_path}` : placeholder} alt="thumbnail" />
@@ -44,7 +57,8 @@ const Card = ({ video, search, history }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </div>)}
+    </>
   );
 };
 

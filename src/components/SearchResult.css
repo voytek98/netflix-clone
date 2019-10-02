@@ -19,7 +19,7 @@
 .card--search {
   /* flex: auto 1 40%; */
   margin: 0.5rem;
-  max-height: 300px;
+  height: 300px;
   transition: unset;
 }
 

@@ -13,7 +13,7 @@ export const LoadingCircle = () => {
 export const LoadingRectangles = () => {
   return (
     <div className="spinner">
-      <div class="lds-facebook"><div></div><div></div><div></div></div>
+      <div className="lds-facebook"><div></div><div></div><div></div></div>
     </div>
   )
 }

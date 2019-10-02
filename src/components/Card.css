@@ -4,7 +4,7 @@
   margin: 0 2px;
   position: relative;
   transition: transform 300ms ease 100ms;
-  max-height: 200px;
+  height: 200px;
 }
 
 .card:hover {
@@ -130,7 +130,7 @@
     position: relative;
     flex: 0 0 30%;
     margin: 0 4px;
-    max-height: 400px;
+    height: 100%;
   }
 
   .card:hover {
