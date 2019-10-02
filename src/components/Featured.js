@@ -1,11 +1,13 @@
 import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 
+import { LoadingCircle } from "./LoadingSpinners";
+
 import "./Featured.css"
 import placeholder from "../assets/images/placeholder-black.png";
 
 const Featured = ({title}) => {
-  const [random, setRandom] = useState({})
+  const [random, setRandom] = useState({});
 
   let mobileScreen = window.matchMedia('(max-width: 575.98px)');
 
@@ -13,24 +15,26 @@ const Featured = ({title}) => {
   let posterImage = "https://image.tmdb.org/t/p/w500";
   
   useEffect(()=> {
-    title().then(title => setRandom(title))  
+    title().then(title => setRandom(title))
   }, [title]);
 
   return (
     <div className="featured">
-      <div className="featured__background">
-        <img 
-          src={ 
-            // Prevent 404 error
-            typeof random.backdrop_path == ("undefined" || "null") ? placeholder :
-            // Set background image depend on user screen size
-            (mobileScreen.matches ? `${posterImage}${random.poster_path}` :
-            `${baseImage}${random.backdrop_path}`)
-          }
-          alt=""
-        />
-      </div>
-      <div className="featured__content">
+      {!random.id? <LoadingCircle /> :
+      <>
+        <div className="featured__background">
+          <img 
+            src={ 
+              // Prevent 404 error
+              typeof random.backdrop_path == ("undefined" || "null") ? placeholder :
+              // Set background image depend on user screen size
+              (mobileScreen.matches ? `${posterImage}${random.poster_path}` :
+              `${baseImage}${random.backdrop_path}`)
+            }
+            alt=""
+          />
+        </div>
+        <div className="featured__content">
         <div className="featured__image">
           <img 
             src={
@@ -56,6 +60,8 @@ const Featured = ({title}) => {
           <p className="lead__content__description">{random.overview}</p>
         </div>
       </div>
+      </>
+      }
     </div>
   )
 };
