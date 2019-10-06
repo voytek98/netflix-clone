@@ -1,12 +1,13 @@
 .featured {
+  display: flex;
   position: relative;
-  height: 80vh;
+  min-height: 80vh;
   padding: 0 5rem;
 }
 
 .featured__content {
   animation: 1.5s ease-in opacity;
-  height: inherit;
+  max-height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -19,7 +20,7 @@
   left: 0;
   position: absolute;
   z-index: -1;
-  height: inherit;
+  height: 100%;
   width: 100%;
   background-color: transparent;
 }
