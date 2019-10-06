@@ -26,7 +26,7 @@ const Featured = ({title}) => {
           <img 
             src={ 
               // Prevent 404 error
-              typeof random.backdrop_path == ("undefined" || "null") ? placeholder :
+              random.backdrop_path === null ? placeholder :
               // Set background image depend on user screen size
               (mobileScreen.matches ? `${posterImage}${random.poster_path}` :
               `${baseImage}${random.backdrop_path}`)
@@ -39,7 +39,7 @@ const Featured = ({title}) => {
           <img 
             src={
               // Prevent 404 error
-              typeof random.backdrop_path == ("undefined" || "null") ? placeholder :
+              random.backdrop_path === null ? placeholder :
               `${baseImage}${random.backdrop_path}`
             } 
             alt=""
