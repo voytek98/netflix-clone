@@ -56,10 +56,17 @@ export const randomNetflixTitle = async () => {
     }
   }) 
 
-  let maxNum = res.data.results.length;
+  let filteredSearch = res.data.results.filter((el)=> {
+    return (
+      el.backdrop_path !== null &&
+      el.poster_path !== null
+    )
+  })
+
+  let maxNum = filteredSearch.length;
   let randomNum = Math.floor(Math.random() * maxNum);
 
-  return res.data.results[randomNum];
+  return filteredSearch[randomNum];
 }
 
 // Random TV show
@@ -71,10 +78,17 @@ export const randomTvShow = async () => {
     }
   }) 
 
-  let maxNum = res.data.results.length;
+  let filteredSearch = res.data.results.filter((el)=> {
+    return (
+      el.backdrop_path !== null &&
+      el.poster_path !== null
+    )
+  })
+
+  let maxNum = filteredSearch.length;
   let randomNum = Math.floor(Math.random() * maxNum);
 
-  return res.data.results[randomNum];
+  return filteredSearch[randomNum];
 }
 
 // Random movie
@@ -86,10 +100,17 @@ export const randomMovie = async () => {
     }
   }) 
 
-  let maxNum = res.data.results.length;
+  let filteredSearch = res.data.results.filter((el)=> {
+    return (
+      el.backdrop_path !== null &&
+      el.poster_path !== null
+    )
+  })
+
+  let maxNum = filteredSearch.length;
   let randomNum = Math.floor(Math.random() * maxNum);
 
-  return res.data.results[randomNum];
+  return filteredSearch[randomNum];
 }
 
 // Random trending movie/tv show
@@ -98,10 +119,17 @@ export const randomTrending = async () => {
     params: { api_key: process.env.REACT_APP_API }
   });
 
-  let maxNum = res.data.results.length;
+  let filteredSearch = res.data.results.filter((el)=> {
+    return (
+      el.backdrop_path !== null &&
+      el.poster_path !== null
+    )
+  })
+
+  let maxNum = filteredSearch.length;
   let randomNum = Math.floor(Math.random() * maxNum);
   
-  return res.data.results[randomNum];
+  return filteredSearch[randomNum];
 }
 
 
@@ -252,7 +280,14 @@ export const upcomingTvShows = async () => {
     }
   }) 
 
-  let upcomingTvShows = res.data.results.slice(0, 5);
+  let filteredSearch = res.data.results.filter((el)=> {
+    return (
+      el.backdrop_path !== null &&
+      el.poster_path !== null
+    )
+  })
+
+  let upcomingTvShows = filteredSearch.slice(0, 5);
 
   return upcomingTvShows;
 }
@@ -266,7 +301,14 @@ export const upcomingMovies = async () => {
     }
   }) 
 
-  let upcomingMovies = res.data.results.slice(0, 5);
+  let filteredSearch = res.data.results.filter((el)=> {
+    return (
+      el.backdrop_path !== null &&
+      el.poster_path !== null
+    )
+  })
+
+  let upcomingMovies = filteredSearch.slice(0, 5);
 
   return upcomingMovies;
 }
