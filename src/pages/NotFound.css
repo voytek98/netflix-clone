@@ -1,0 +1,25 @@
+.not__found {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  margin-top: 2rem;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.not__found__desc {
+  color: gray;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.not__found__title {
+  color: white;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 9rem;
+  margin: 1rem 0;
+}

@@ -12,6 +12,7 @@ import RecentlyAdded from "../pages/RecentlyAdded";
 import MyList from "../pages/MyList";
 import Search from "../pages/Search";
 import SearchTitle from "../pages/SearchTitle";
+import NotFound from "../pages/NotFound";
 
 class App extends React.Component {
   state = {
@@ -47,6 +48,7 @@ class App extends React.Component {
               <Route path='/movies' component={Movies} />
               <Route path='/recently-added' component={RecentlyAdded} />
               <Route path='/my-list' component={MyList} />
+              <Route component={NotFound} />
             </Switch>            
           <Footer />
         </div>
