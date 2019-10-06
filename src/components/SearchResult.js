@@ -29,7 +29,8 @@ const SearchResult = () => {
     let filteredSearch = res.data.results.filter((el)=> {
       return (
         el.media_type !== "person" &&
-        el.overview !== ""
+        el.overview !== "" &&
+        el.poster_path !== null
       )
     })
 
