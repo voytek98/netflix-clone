@@ -36,6 +36,5 @@
   },
   "devDependencies": {
     "eslint-plugin-react-hooks": "^1.6.0"
-  },
-  "homepage": "https://wojciech-florczak.github.io/netflix-clone"
+  }
 }
