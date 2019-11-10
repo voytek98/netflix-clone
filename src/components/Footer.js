@@ -17,7 +17,7 @@ const Footer = () => {
             <a className="footer__icon" href="https://github.com/Wojciech-Florczak/netflix-clone"><i className="fab fa-github"></i></a>
           </div>
           <div className="footer__social__content">
-            <p className="footer__description">and checkout my portfolio</p>
+            <p className="footer__description">and check my portfolio</p>
             <a className="footer__portfolio" href="https://wojciech.dev">Wojciech.dev</a>
           </div>
         </div>
